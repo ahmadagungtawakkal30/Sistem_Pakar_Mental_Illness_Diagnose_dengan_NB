@@ -1,0 +1,206 @@
+{% extends 'index.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <h1>{% block title %}Data Kondisi{% endblock %}</h1>
+</head>
+<body>
+    {% block content %}
+    <p align="center" size="12pt">Silakan cek data kondisi yang Anda masukkan</p>
+    <form action="/save_kondisi" method="POST">
+        <table align="center">
+            <tr align="left">
+                <td>Tinggal dengan orang tua</td>
+                <td>:</td>
+                {% if data[0] == 1 %}
+                <td>
+                   Ya
+                </td>
+                {% else %}
+                <td>
+                    Tidak
+                 </td>
+                {% endif %}
+            </tr>
+            <tr align="left">
+                <td>Pernah gap year</td>
+                <td>:</td>
+                {% if data[1] == 1 %}
+                <td>
+                   Ya
+                </td>
+                {% else %}
+                <td>
+                    Tidak
+                 </td>
+                 {% endif %}
+            </tr>
+            <tr align="left">
+                <td>Lama gapyear</td>
+                <td>:</td>
+                <td>{{ data[2] }}</td>
+            </tr>
+            <tr align="left">
+                <td>Pernah dirawat karena mental illness</td>
+                <td>:</td>
+                {% if data[3] == 1 %}
+                <td>
+                   Ya
+                </td>
+                {% else %}
+                <td>
+                    Tidak
+                 </td>
+                 {% endif %}
+            </tr>
+            <tr align="left">
+                <td>Berapa kali anda dirawat karena mental illness?</td>
+                <td>:</td>
+                <td>{{ data[4] }}</td>
+            </tr>
+            <tr align="left">
+                <td>Apakah Anda seorang penyandang disabilitas?</td>
+                <td>:</td>
+                {% if data[5] == 1 %}
+                <td>
+                   Ya
+                </td>
+                {% else %}
+                <td>
+                    Tidak
+                 </td>
+                 {% endif %}
+            </tr>
+            <tr align="left">
+                <td>Berapa usia Anda?</td>
+                <td>:</td>
+                <td>{{ data[6] }}</td>
+            </tr>
+            <tr align="left">
+                <td>Anxiety</td>
+                <td>:</td>
+                {% if data[7] == 1 %}
+                <td>
+                   Ya
+                </td>
+                {% else %}
+                <td>
+                    Tidak
+                 </td>
+                 {% endif %}
+            </tr>
+            <tr align="left">
+                <td>Apakah Anda sedang mengalami depresi akan suatu hal?</td>
+                <td>:</td>
+                {% if data[8] == 1 %}
+                <td>
+                   Ya
+                </td>
+                {% else %}
+                <td>
+                    Tidak
+                 </td>
+                 {% endif %}
+            </tr>
+            <tr align="left">
+                <td>Apakah Anda seorang yang obbessive?</td>
+                <td>:</td>
+                {% if data[9] == 1 %}
+                <td>
+                   Ya
+                </td>
+                {% else %}
+                <td>
+                    Tidak
+                 </td>
+                 {% endif %}
+            </tr>
+            <tr align="left">
+                <td>Sering mengalami perubahan mood secara tiba-tiba</td>
+                <td>:</td>
+                {% if data[10] == 1 %}
+                <td>
+                   Ya
+                </td>
+                {% else %}
+                <td>
+                    Tidak
+                 </td>
+                 {% endif %}
+            </tr>
+            <tr align="left">
+                <td>Memiliki gangguan kecemasan</td>
+                <td>:</td>
+                {% if data[11] == 1 %}
+                <td>
+                   Ya
+                </td>
+                {% else %}
+                <td>
+                    Tidak
+                 </td>
+                 {% endif %}
+            </tr>
+            <tr align="left">
+                <td>Apakah Anda seorang yang compulsive?</td>
+                <td>:</td>
+                {% if data[12] == 1 %}
+                <td>
+                   Ya
+                </td>
+                {% else %}
+                <td>
+                    Tidak
+                 </td>
+                 {% endif %}
+            </tr>
+            <tr align="left">
+                <td>Apakah Anda mudah merasa kelelahan saat mengerjakan suatu hal?</td>
+                <td>:</td>
+                {% if data[13] == 1 %}
+                <td>
+                   Ya
+                </td>
+                {% else %}
+                <td>
+                    Tidak
+                 </td>
+                 {% endif %}
+            </tr>
+            <tr align="left">
+                <td>Susah berkonsentrasi</td>
+                <td>:</td>
+                {% if data[0] == 1 %}
+                <td>
+                   Ya
+                </td>
+                {% else %}
+                <td>
+                    Tidak
+                 </td>
+                 {% endif %}
+            </tr>
+            <tr>
+                <td>
+                    <button type="submit" class="btn btn-secondary" value="submit">
+                        Submit
+                    </button> 
+                </td>
+            </form>
+                <td> </td>
+            <form action="/form_kondisi" method="post">  
+                <td>          
+                    <button type="submit" class="btn btn-secondary" value="back">
+                        Ulang
+                    </button>
+                </td>
+            </form>
+            </tr>
+        </table>
+    
+    {% endblock %}
+</body>
+</html>
